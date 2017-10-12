@@ -22,6 +22,9 @@ import time
 import logging
 import threading
 
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+import SocketServer
+
 python_version = sys.version_info >= (3, 0)
 if not python_version:
     reload(sys)
@@ -391,6 +394,11 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s', datefmt='%Y/%m/%d %H:%M:%S')
     logger = logging.getLogger('%s' % 'client')
     logger.debug('python-ngrok v1.42')
+    print "serving at port 8000"
+    httpd = threading.Thread(target=SocketServer.TCPServer(("", 8000), SimpleHTTPRequestHandler).serve_forever)
+    httpd.setDaemon(True)
+    httpd.start()
+    print "server started!!!"
     while True:
         try:
             # 检测控制连接是否连接.
