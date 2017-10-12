@@ -13,3 +13,6 @@
 - `docker run -it --rm --name py-server python:2.7 /bin/sh -c 'cd /root/; echo Hello World! Ngrok Sunny! > index.html; python -m SimpleHTTPServer 8088'`
 - `docker run --rm --name ngrok-sunny --link py-server:dockerdjango jacktan1991/ngrok-sunny 167bc4b9187dd399` 对应访问地址: http://dockerdjango.free.ngrok.cc/
 
+### docker-compose版示例
+- `docker-compose -f docker-compose.tutorial.yml up`: 对应访问地址: http://dockerdjango.free.ngrok.cc/
+

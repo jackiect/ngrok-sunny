@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    image: "python:2.7"
+    command: |
+      /bin/bash -c "
+        cd /root/
+        echo 'Hello World! Ngrok Sunny!' > index.html
+        python -m SimpleHTTPServer 8088
+      "
+  ngrok:
+    build: .
+    command: 167bc4b9187dd399
+    links:
+      - web:dockerdjango
+
