@@ -1,0 +1,6 @@
+.git
+Dockerfile
+*.pyc
+.DS_Store
+README.md
+
