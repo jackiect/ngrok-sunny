@@ -5,5 +5,5 @@ WORKDIR /usr/src
 COPY sunny.py ./
 
 ENTRYPOINT ["python", "sunny.py", "--clientid"]
-CMD ["78abf60bad8281af"]
+CMD ["58139fe6d27de653"]
 
